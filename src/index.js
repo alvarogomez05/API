@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 5002;
 const Sequelize = require("./config/db")
 
 app.use(bodyParser.json());
-bodyParser.urlencoded({ extended: false });
+app.use(bodyParser.urlencoded({ extended: false }));
 
 const router = require("./routes/index");
 
