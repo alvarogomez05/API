@@ -69,7 +69,7 @@ const Cliente = sequelize.define('Cliente', {
     allowNull: false
   }
 }, {
-  tableName: 'clientes', // Especifica el nombre de la tabla
+  tableName: 'Clientes', // Especifica el nombre de la tabla
   timestamps: false // Si no necesitas campos de fechas como createdAt y updatedAt
 });
 
