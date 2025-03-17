@@ -15,5 +15,7 @@ router.use("/clientes", ClientesRouter)
 // router.use("/empleados", EmpleadosRouter)
 // router.use("/compras", ComprasRouter)
 // router.use("/favoritos", FavoritosRouter)
+// router.use("/imagenes", ImagenRouter)
+// router.use("/carrito", CarritoRouter)
 
 module.exports = router;

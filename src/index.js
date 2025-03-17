@@ -5,6 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 5002;
 
 const Sequelize = require("./config/db")
+const { sequelize, Cliente, Carrito, Favoritos, Compras, Producto, Imagen, Empleados } = require('./database/models');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -15,5 +16,6 @@ app.use("/api", router);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-  Sequelize.sync({force:false}).then(()=> console.log("conectado a la bd"))
+  sequelize.sync({force:true}).then(()=> console.log("conectado a la bd"))
 });
+// 
