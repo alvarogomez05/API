@@ -34,3 +34,7 @@ const getImagenByProduct = async (id) => {
 
     return imagenes;
 }
+
+module.exports = {
+    getImagenByProduct,postImagen,updateImagen,deleteImagen
+}
