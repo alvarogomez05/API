@@ -17,13 +17,13 @@ const sequelize = require('./../../config/db');
         min: 1, // Valor mínimo válido para ID
       },
     },
-    productos: {
-      type: DataTypes.JSON, // Almacena productos como un JSON (por ejemplo, lista de objetos)
-      allowNull: false,
-      validate: {
-        notEmpty: true, // No puede estar vacío
-      },
-    },
+    // productos: {
+    //   type: DataTypes.JSON, // Almacena productos como un JSON (por ejemplo, lista de objetos)
+    //   allowNull: false,
+    //   validate: {
+    //     notEmpty: true, // No puede estar vacío
+    //   },
+    // },
     fecha: {
       type: DataTypes.DATE,
       allowNull: false,

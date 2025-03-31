@@ -16,6 +16,22 @@ const Empleado = sequelize.define('Empleado', {
         len: [2, 255], // Longitud mínima y máxima
       },
     },
+    apellido1:{
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true, // No puede estar vacío
+        len: [2, 255], // Longitud mínima y máxima
+      },
+    },
+    apellido2:{
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true, // No puede estar vacío
+        len: [2, 255], // Longitud mínima y máxima
+      },
+    },
     cargo: {
       type: DataTypes.STRING,
       allowNull: false,

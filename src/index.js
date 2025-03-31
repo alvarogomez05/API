@@ -16,6 +16,6 @@ app.use("/api", router);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-  sequelize.sync({force:true}).then(()=> console.log("conectado a la bd"))
+  sequelize.sync({force:false}).then(()=> console.log("conectado a la bd"))
 });
 // 
