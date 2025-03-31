@@ -12,7 +12,8 @@ const postClientes = async (req,res) => {
 
   const clientes = await clienteService.postClientes({
         nombre: req.body.nombre,
-        apellido: req.body.apellido,
+        apellido1: req.body.apellido1,
+        apellido2: req.body.apellido2,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
         telefono: req.body.telefono,

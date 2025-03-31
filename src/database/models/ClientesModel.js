@@ -22,7 +22,7 @@ const Cliente = sequelize.define('Cliente', {
          },
        },
      },
-     apellido: {
+     apellido1: {
        type: DataTypes.STRING,
        allowNull: false,
        validate: {
@@ -36,6 +36,20 @@ const Cliente = sequelize.define('Cliente', {
          },
        },
      },
+     apellido2: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isAlpha: {
+          args: true,
+          msg: 'El apellido solo puede contener letras',
+        },
+        len: {
+          args: [3, 50],
+          msg: 'El apellido debe tener entre 3 y 50 caracteres',
+        },
+      },
+    },
   email: {
     type: DataTypes.STRING,
     allowNull: false,
