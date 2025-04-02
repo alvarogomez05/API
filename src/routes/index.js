@@ -12,8 +12,8 @@ const CarritoRouter = require("./CarritoRouter.js")
 
 router.use("/productos", ProductosRouter);
 router.use("/clientes", ClientesRouter)
-// router.use("/empleados", EmpleadosRouter)
-// router.use("/compras", ComprasRouter)
+router.use("/empleados", EmpleadosRouter)
+router.use("/compras", ComprasRouter)
 // router.use("/favoritos", FavoritosRouter)
 // router.use("/imagenes", ImagenRouter)
 // router.use("/carrito", CarritoRouter)
