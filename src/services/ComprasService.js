@@ -3,10 +3,13 @@ const Compra = require('./../database/models/ComprasModel')
 
 const getCompras = async()=>{
     let compras = await Compra.findAll();
+    // console.log(compras)
     return compras;
 }
 
 const postCompras = async(c)=>{
+    console.log(c)
+    console.log("AAAAAA")
     let compras = await Compra.create(c)
     return compras;
 }

@@ -12,10 +12,6 @@ const Cliente = sequelize.define('Cliente', {
        type: DataTypes.STRING,
        allowNull: false,
        validate: {
-         isAlpha: {
-           args: true,
-           msg: 'El nombre solo puede contener letras',
-         },
          len: {
            args: [3, 50],
            msg: 'El nombre debe tener entre 3 y 50 caracteres',
@@ -26,10 +22,6 @@ const Cliente = sequelize.define('Cliente', {
        type: DataTypes.STRING,
        allowNull: false,
        validate: {
-         isAlpha: {
-           args: true,
-           msg: 'El apellido solo puede contener letras',
-         },
          len: {
            args: [3, 50],
            msg: 'El apellido debe tener entre 3 y 50 caracteres',
@@ -40,10 +32,6 @@ const Cliente = sequelize.define('Cliente', {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        isAlpha: {
-          args: true,
-          msg: 'El apellido solo puede contener letras',
-        },
         len: {
           args: [3, 50],
           msg: 'El apellido debe tener entre 3 y 50 caracteres',

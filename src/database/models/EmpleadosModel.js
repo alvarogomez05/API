@@ -53,7 +53,7 @@ const Empleado = sequelize.define('Empleado', {
       validate: {
         notEmpty: true,
         isNumeric: true, // Solo números
-        len: [10, 15], // Rango de longitud (puedes ajustarlo según tus necesidades)
+        len: [9], // Rango de longitud (puedes ajustarlo según tus necesidades)
       },
     },
     salario: {

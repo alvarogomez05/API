@@ -28,9 +28,10 @@ Producto.belongsToMany(Carrito, { through: Carrito, foreignKey: 'id_producto' })
 Producto.belongsToMany(Favoritos, { through: Favoritos, foreignKey: 'id_producto' });
 Producto.belongsToMany(Compras, { through: Compras, foreignKey: 'id_producto' });
 
+
 Carrito.belongsTo(Producto, { foreignKey: "id_producto" });
 Favoritos.belongsTo(Producto, { foreignKey: "id_producto" });
-Compras.belongsToMany(Producto, { through: Compras, foreignKey: 'id_producto' });
+Compras.belongsTo(Producto,  {foreignKey: 'id_producto'} );
 
 module.exports = {
     sequelize,Cliente,Carrito,Favoritos,Compras,Producto,Imagen,Empleados

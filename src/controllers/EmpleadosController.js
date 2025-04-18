@@ -2,8 +2,8 @@ const EmpleadosService = require('./../services/EmpleadosService')
 const bcrypt = require("bcrypt");
 
 const getEmpleado = async (req, res) => {
-    const empleados = EmpleadosService.getEmpleado();
-    return empleados;
+    const empleados = await EmpleadosService.getEmpleado();
+    res.status(200).send(empleados);
 }
 
 const postEmpleado = async (req, res) => {

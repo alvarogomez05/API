@@ -9,14 +9,14 @@ const sequelize = require('./../../config/db');
       autoIncrement: true,
       allowNull: false,
     },
-    id_cliente: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        isInt: true, // Asegura que sea un número entero
-        min: 1, // Valor mínimo válido para ID
-      },
-    },
+    // id_cliente: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   validate: {
+    //     isInt: true, // Asegura que sea un número entero
+    //     min: 1, // Valor mínimo válido para ID
+    //   },
+    // },
     // productos: {
     //   type: DataTypes.JSON, // Almacena productos como un JSON (por ejemplo, lista de objetos)
     //   allowNull: false,

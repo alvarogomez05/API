@@ -3,15 +3,14 @@ const Carrito = require('./../database/models/CarritoModel')
 
 const getCarritoById = async(id) =>{
     let carrito = Carrito.findAll({
-        where:{id:id}
+        where:{id_cliente:id}
     })
     return carrito;
 }
 
-const postCarrito = async(c,id) => {
-    let carrito = Carrito.create(c,{
-        where:{id:id}
-    })
+const postCarrito = async(c) => {
+    // console.log(c)
+    let carrito = Carrito.create(c)
     return carrito;
 }
 

@@ -23,6 +23,7 @@ const postClientes = async (req,res) => {
 }
 
 const updateClientes = async (req,res) => {
+  console.log(req.body)
   const clientes = await clienteService.updateClientes(req.params.id,{
     nombre: req.body.nombre,
     apellido: req.body.apellido,
