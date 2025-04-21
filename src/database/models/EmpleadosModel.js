@@ -8,6 +8,16 @@ const Empleado = sequelize.define('Empleado', {
       autoIncrement: true,
       allowNull: false,
     },
+    dni: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        notEmpty: true,
+        len: [9, 9],
+        is: /^[0-9]{8}[A-Z]$/i, // Valida 8 números seguidos de 1 letra
+      },
+    },
     nombre: {
       type: DataTypes.STRING,
       allowNull: false,

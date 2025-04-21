@@ -45,15 +45,6 @@ const Producto = sequelize.define('Producto',{
           notEmpty: true,
         },
       },
-      dto: {
-        type: DataTypes.FLOAT,
-        defaultValue: 1.0, // Valor por defecto actualizado a 1 (100%)
-        validate: {
-          isFloat: true,
-          min: 0.0,
-          max: 1.0,
-        },
-      },
     }, {
       tableName: 'Productos',
       timestamps: false,

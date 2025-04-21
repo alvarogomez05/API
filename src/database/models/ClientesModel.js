@@ -69,7 +69,17 @@ const Cliente = sequelize.define('Cliente', {
   direccion: {
     type: DataTypes.STRING,
     allowNull: false
-  }
+  },
+  token: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    defaultValue: '000000',
+    validate: {
+      notEmpty: true,
+      len: [6, 6],
+      is: /^[0-9]{6}$/
+    },
+  }  
 }, {
   tableName: 'Clientes', // Especifica el nombre de la tabla
   timestamps: false // Si no necesitas campos de fechas como createdAt y updatedAt
