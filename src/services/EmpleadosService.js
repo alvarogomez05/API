@@ -33,8 +33,8 @@ const deleteEmpleado = async (id) => {
 const comprobarUsuario = async (email, password, dni) => {
     try {
       console.log("🔍 Buscando usuario con dni:", dni);
-      const dni = await Empleado.findOne({ where: { dni:dni } });
-        if ( !dni){
+      const x = await Empleado.findOne({ where: { dni:dni } });
+        if ( !x){
             console.log("❌ Usuario no encontrado");
             return { status: 404, error: "Error en las credenciales" };
         }
@@ -77,5 +77,5 @@ const comprobarUsuario = async (email, password, dni) => {
   };
 
 module.exports={
-    getEmpleado,postEmpleado,updateEmpleado,deleteEmpleado
+    getEmpleado,postEmpleado,updateEmpleado,deleteEmpleado,comprobarUsuario
 }

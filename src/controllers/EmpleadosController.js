@@ -10,6 +10,7 @@ const postEmpleado = async (req, res) => {
     //   console.log(req.body)
 
     const empleados = await EmpleadosService.postEmpleado({
+        dni: req.body.dni,
         nombre: req.body.nombre,
         apellido1: req.body.apellido1,
         apellido2: req.body.apellido2,
@@ -24,6 +25,7 @@ const postEmpleado = async (req, res) => {
 
 const updateEmpleado = async (req, res) => {
     const empleados = await EmpleadosService.updateEmpleado(req.params.id, {
+        dni: req.body.dni,
         nombre: req.body.nombre,
         apellido1: req.body.apellido1,
         apellido2: req.body.apellido2,
