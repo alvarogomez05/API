@@ -43,10 +43,17 @@ const deleteClientes = async (req,res) => {
    })
 }
 
+const comprobarUsuario = async (req,res) => {
+  const cliente = await clienteService.comprobarUsuario(req.body.email,req.body.password);
+  console.log(cliente)
+  res.send(cliente)
+}
+
 
 module.exports={
     getClientes,
     postClientes,
     updateClientes,
-    deleteClientes
+    deleteClientes,
+    comprobarUsuario
 }

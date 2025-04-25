@@ -60,7 +60,12 @@ const deleteEmpleado = async (req, res) => {
 
 }
 
+const comprobarUsuario = async (req,res) => {
+  const empleado = await EmpleadosService.comprobarUsuario(req.body.email,req.body.password,req.body.dni);
+  console.log(empleado)
+  res.send(empleado)
+}
 
 module.exports = {
-    getEmpleado, postEmpleado, updateEmpleado, deleteEmpleado
+    getEmpleado, postEmpleado, updateEmpleado, deleteEmpleado, comprobarUsuario
 }
