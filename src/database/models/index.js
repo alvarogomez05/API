@@ -8,7 +8,6 @@ const Carrito = require('./CarritoModel')
 const Favoritos = require('./FavoritosModel')
 const Compras = require('./ComprasModel')
 const Empleados = require('./EmpleadosModel')
-const Imagen = require('./ImagenModel')
 
 
 
@@ -21,9 +20,6 @@ Carrito.belongsTo(Cliente, { foreignKey: 'id_clientes' });
 Favoritos.belongsTo(Cliente, { foreignKey: 'id_clientes' });
 Compras.belongsTo(Cliente, { foreignKey: 'id_cliente' });
 
-Producto.hasMany(Imagen, { foreignKey: 'id_producto' });
-Imagen.belongsTo(Producto, { foreignKey: 'id_producto' });
-
 Producto.belongsToMany(Carrito, { through: Carrito, foreignKey: 'id_producto' });
 Producto.belongsToMany(Favoritos, { through: Favoritos, foreignKey: 'id_producto' });
 Producto.belongsToMany(Compras, { through: Compras, foreignKey: 'id_producto' });
@@ -34,5 +30,5 @@ Favoritos.belongsTo(Producto, { foreignKey: "id_producto" });
 Compras.belongsTo(Producto,  {foreignKey: 'id_producto'} );
 
 module.exports = {
-    sequelize,Cliente,Carrito,Favoritos,Compras,Producto,Imagen,Empleados
+    sequelize,Cliente,Carrito,Favoritos,Compras,Producto,Empleados
 }

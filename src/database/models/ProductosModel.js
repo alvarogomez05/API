@@ -45,6 +45,10 @@ const Producto = sequelize.define('Producto',{
           notEmpty: true,
         },
       },
+      imagen: {
+        type: DataTypes.BLOB('long'),
+        allowNull: false,
+      },
     }, {
       tableName: 'Productos',
       timestamps: false,
