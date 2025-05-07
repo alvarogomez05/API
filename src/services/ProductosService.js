@@ -32,9 +32,17 @@ const deleteProducto = async (id) => {
   return producto;
 }
 
+const getProductsbyId = async (id) => {
+  const producto = await Producto.findAll({
+    where: { id_producto: id }
+  })
+  return producto;
+}
+
 module.exports = {
     getProducto,
     postProducto,
     updateProducto,
-    deleteProducto
+    deleteProducto,
+    getProductsbyId
   }

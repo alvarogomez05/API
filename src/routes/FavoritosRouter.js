@@ -5,6 +5,6 @@ const FavoritosRouter = require('express').Router();
 FavoritosRouter.get('/:id', FavoritosController.getFavoritoById)
 // 
 FavoritosRouter.post('/:id', FavoritosController.postFavorito)
-FavoritosRouter.delete('/:id', FavoritosController.deleteFavorito)
+FavoritosRouter.delete('/:id/:id_producto', FavoritosController.deleteFavorito)
 
 module.exports = FavoritosRouter;

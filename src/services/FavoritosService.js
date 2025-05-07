@@ -8,17 +8,20 @@ const getFavoritoById = async (id) =>{
     return favorito;
 }
 
-const postFavorito = async (id,fav) =>{
-    let favorito = await Favorito.create(fav,{
-        where:{id_cliente: id}
-    })
+const postFavorito = async (fav) =>{
+    console.log(fav)
+    let favorito = await Favorito.create(fav)
     return favorito;
 }
 
-const deleteFavorito = async (id) => {
+const deleteFavorito = async (id,id_producto) => {
+    console.log(id)
+    console.log(id_producto)
     let favorito =await Favorito.destroy({
-        where:{id: id}
+        where:{id_cliente: id,
+            id_producto: id_producto}
     })
+    console.log(favorito)
     return favorito;
 
 }

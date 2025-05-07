@@ -6,12 +6,18 @@ const getFavoritoById = async (req,res) =>{
 }
 
 const postFavorito = async (req,res) =>{
-  let favoritos = await FavoritoService.postFavorito(req.params.id,req.body)
+
+  let fav = {
+    id_cliente: req.params.id,
+    id_producto: req.body.id_producto
+  }
+
+  let favoritos = await FavoritoService.postFavorito(fav)
   res.send(favoritos).status(200)
 }
 
 const deleteFavorito = async (req,res) => {
-    let favoritos = await FavoritoService.deleteFavorito(req.params.id)
+    let favoritos = await FavoritoService.deleteFavorito(req.params.id,req.params.id_producto)
     res.send({
         status: 200,
         ok: true

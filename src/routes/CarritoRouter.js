@@ -3,6 +3,6 @@ const CarritoController = require('./../controllers/CarritoController');
 
 CarritoRouter.get("/:id", CarritoController.getCarritoById)
 CarritoRouter.post("/", CarritoController.postCarrito)
-CarritoRouter.delete("/:id", CarritoController.deleteCarrito)
+CarritoRouter.delete("/:id_cliente/:id_producto", CarritoController.deleteCarrito)
 
 module.exports = CarritoRouter;

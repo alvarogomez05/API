@@ -11,7 +11,7 @@ const postCarrito = async(req,res) => {
 }
 
 const deleteCarrito = async (req,res) => {
-    let carrito = await  CarritoService.deleteCarrito(req.params.id)
+    let carrito = await  CarritoService.deleteCarrito(req.params.id_cliente,req.params.id_producto)
     res.send({
         status:200,
         ok: true

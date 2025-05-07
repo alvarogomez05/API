@@ -14,9 +14,11 @@ const postCarrito = async(c) => {
     return carrito;
 }
 
-const deleteCarrito = async (id) => {
+const deleteCarrito = async (id_cliente,id_producto) => {
     let carrito = Carrito.destroy({
-        where: {id:id}
+        where: {id_cliente:id_cliente,
+            id_producto:id_producto
+        }
     })
 }
 

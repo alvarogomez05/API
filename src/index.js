@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 5002;
 
 const Sequelize = require("./config/db")
-const { sequelize, Cliente, Carrito, Favoritos, Compras, Producto, Imagen, Empleados } = require('./database/models');
+const { sequelize, Cliente, Carrito, Favoritos, Compras, Producto, Empleados } = require('./database/models');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
