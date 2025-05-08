@@ -30,7 +30,16 @@ const updateClientes = async (req,res) => {
     email: req.body.email,
     password: bcrypt.hashSync(req.body.password, 10),
     telefono: req.body.telefono,
-    direccion: req.body.direccion
+    direccion: req.body.direccion,
+    token: req.body.token
+  });
+  res.status(200).send(clientes);
+}
+
+const updateToken = async (req,res) => {
+  console.log(req.body)
+  const clientes = await clienteService.updateClientes(req.params.id,{
+    token: req.body.token
   });
   res.status(200).send(clientes);
 }
@@ -49,11 +58,19 @@ const comprobarUsuario = async (req,res) => {
   res.send(cliente)
 }
 
+const comprobarToken = async (req,res) =>{
+  const cliente = await clienteService.comprobarToken(req.params.id,req.body.token);
+  // console.log(cliente)
+  res.send(cliente).status(200)
+}
+
 
 module.exports={
     getClientes,
     postClientes,
     updateClientes,
     deleteClientes,
-    comprobarUsuario
+    comprobarUsuario,
+    updateToken,
+    comprobarToken
 }

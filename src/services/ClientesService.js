@@ -21,6 +21,14 @@ const updateClientes = async (id,user) => {
   return clientes;
 }
 
+const updateToken = async (id,user) => {
+  const clientes = await Cliente.update(user,{
+    where: { id_cliente: id }
+  })
+  return clientes;
+}
+
+
 const deleteClientes = async (id) => {
   const clientes = await Cliente.destroy({
     where: { id_cliente: id }
@@ -68,10 +76,26 @@ const comprobarUsuario = async (email, password) => {
   }
 };
 
+const comprobarToken = async (id,token) => {
+  console.log("AAAAAAAAAAAAAA")
+  const usuario = await Cliente.findOne({ where: { id_cliente:id,token: token} });
+
+  if(usuario){
+    console.log("el usuario existe");
+    return usuario;
+
+  }else{
+    console.log("no existe el usuario")
+    return {status: 401, message: "El usuario no existe o el token es incorrecto"}
+  }
+}
+
 module.exports = {
     getClientes,
     postClientes,
     updateClientes,
     deleteClientes,
-    comprobarUsuario
+    comprobarUsuario,
+    updateToken,
+    comprobarToken
   }
