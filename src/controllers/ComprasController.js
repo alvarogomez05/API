@@ -3,15 +3,13 @@ const ComprasService = require('./../services/ComprasService')
 
 const getCompras = async(req,res)=>{
     let compras = await ComprasService.getCompras();
-    console.log("___________________")
     console.log(compras)
-    console.log("___________________")
     res.send(compras).status(200);
 
 }
 
 const postCompras = async(req,res)=>{
-    // console.log(req.body)
+    console.log(req.body)
     let compras = await ComprasService.postCompras(req.body);
     res.send(compras).status(200);
 }

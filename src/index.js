@@ -1,8 +1,17 @@
 const bodyParser = require("body-parser");
 const express = require("express");
 
+const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 5002;
+
+app.use(cors({
+  origin: 'http://localhost:4200',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+
+
 
 const Sequelize = require("./config/db")
 const { sequelize, Cliente, Carrito, Favoritos, Compras, Producto, Empleados } = require('./database/models');
