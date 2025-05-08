@@ -8,6 +8,7 @@ clientesRouter.put("/token/:id", clientesController.updateToken);
 clientesRouter.delete("/:id", clientesController.deleteClientes);
 clientesRouter.post("/login", clientesController.comprobarUsuario);
 clientesRouter.post("/token/:id", clientesController.comprobarToken);
+clientesRouter.post("/google/", clientesController.comprobarLogGoogle);
 
 
 module.exports = clientesRouter;

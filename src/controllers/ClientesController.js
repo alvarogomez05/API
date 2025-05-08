@@ -64,6 +64,11 @@ const comprobarToken = async (req,res) =>{
   res.send(cliente).status(200)
 }
 
+const comprobarLogGoogle = async (req,res) => {
+  const cliente = await clienteService.comprobarLogGoogle(req.body.email);
+  res.send(cliente).status(200)
+}
+
 
 module.exports={
     getClientes,
@@ -72,5 +77,6 @@ module.exports={
     deleteClientes,
     comprobarUsuario,
     updateToken,
-    comprobarToken
+    comprobarToken,
+    comprobarLogGoogle
 }

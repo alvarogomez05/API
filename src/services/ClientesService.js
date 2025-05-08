@@ -90,6 +90,21 @@ const comprobarToken = async (id,token) => {
   }
 }
 
+const comprobarLogGoogle = async (email) => {
+  console.log("🔍 Buscando usuario con email:", email);
+
+  const usuario = await Cliente.findOne({ where: { email:email } });
+  console.log(usuario)
+  if (!usuario) {
+    console.log("❌ Usuario no encontrado");
+    return { status: 404, error: "Error en usuario y/o contraseña" };
+  }
+
+  console.log("✅ Usuario encontrado:", usuario.email);
+
+  return {usuario}
+}
+
 module.exports = {
     getClientes,
     postClientes,
@@ -97,5 +112,6 @@ module.exports = {
     deleteClientes,
     comprobarUsuario,
     updateToken,
-    comprobarToken
+    comprobarToken,
+    comprobarLogGoogle
   }
