@@ -24,6 +24,15 @@ const sequelize = require('./../../config/db');
         min: 1,
       },
     },
+    cantidad: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 1,
+       validate: {
+        isInt: true,
+        min: 1,
+      },
+    }
   }, {
     tableName: 'Carrito',
     timestamps: false, // No se necesitan campos createdAt ni updatedAt
